@@ -5,6 +5,13 @@ import sys
 sys.setrecursionlimit(2000)
 
 class Point:
+    def load_from(filename):
+        points = np.array([])
+        with open(filename, 'rb') as f:
+            points = np.load(f)
+        return points
+
+
     def __init__(self, point):
         self.raw = point
         self.x = point[0]

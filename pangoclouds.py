@@ -24,10 +24,7 @@ dcam.SetBounds(0.0, 1.0, 0.0, 1.0, -640.0/480.0)
 dcam.SetHandler(handler)
 
 # Load point cloud
-points = np.array([])
-with open(sys.argv[1], 'rb') as f:
-    points = np.load(f)
-
+points = Point.load_from(sys.argv[1])
 nodes = np.array(
         [Node(Point(p), i) for i, p in enumerate(points)])
 print('Nodes:', nodes.shape)
@@ -59,7 +56,7 @@ COLORS = [
     (0, 1, 1),
 ]
 
-# cube_detector.generate_cluster_data(clusters, 'cubes-2.npy')
+# cube_detector.generate_cluster_data(clusters, 'cubes.npy')
 # exit()
 
 is_cube = cube_detector.load_model()

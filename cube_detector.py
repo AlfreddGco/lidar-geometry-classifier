@@ -3,6 +3,9 @@ import tensorflow as tf
 from tensorflow import keras
 from keras import layers
 
+RESOURCE = 'src/lidar_planning/resource'
+CLUSTERS_PATH = RESOURCE + '/clusters'
+
 # Define the model
 model = keras.Sequential([
     keras.layers.Input(shape=(256, 3)),
@@ -23,12 +26,12 @@ if __name__ == '__main__':
     model.summary()
 
     x_cube = []
-    with open('cubes.npy', 'rb') as f:
+    with open(CLUSTERS_PATH + '/cubes.npy', 'rb') as f:
         x_cube = np.load(f)
     y_cube = np.full(len(x_cube), 1)
 
     x_other = []
-    with open('other_shapes.npy', 'rb') as f:
+    with open(CLUSTERS_PATH + '/other_shapes.npy', 'rb') as f:
         x_other = np.load(f)
     y_other = np.full(len(x_other), 0)
 
@@ -53,3 +56,4 @@ def generate_cluster_data(clusters, filename, k = 1):
             sample.append(cluster.random_walk())
     with open(filename, 'wb') as f:
         np.save(f, np.array(sample))
+
