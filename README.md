@@ -10,8 +10,10 @@ Just a bunch of ros2 packages for having fun with inverse kinematics, data proce
 - [pangoclouds.py](pangoclouds.py): Process, renders, and detects cubes (from cube_detector) from lidar data in pangolin
 
 
-### Pangocloud
+### Pangoclouds
 pangoclouds.py loads a point cloud, removes noise, clusters the datapoints and with a neural network identifies cubes from different geometries successfully with an accuracy of 97.6%
 
-![pangloclouds](/images/pangoclouds.png "pangoclouds result")
+![pangloclouds](/images/pangoclouds.png "pangoclouds results")
+
+![pangloclouds](/images/pangoclouds_cubes.png "pangoclouds results")
 
