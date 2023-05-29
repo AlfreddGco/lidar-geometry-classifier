@@ -1,6 +1,6 @@
-# ROS2 Playgound
+# Lidar geometry classifier
 
-Just a bunch of ros2 packages for having fun with inverse kinematics, data processing, lidar, mobility, RL and ML.
+Used ros2, gazebo, keras and pangolin to gather lidar data, render it, and classify simple geometries with a custom neural network model that achieves 97.6% accuracy. Tried out some other other architectures and they were ranging from 85% to 93% accuracy.
 
 ### We got:
 - [.sdf files](src/lidar_planning/resource) with a lidar for gazebo simulations
@@ -10,7 +10,7 @@ Just a bunch of ros2 packages for having fun with inverse kinematics, data proce
 - [pangoclouds.py](pangoclouds.py): Process, renders, and detects cubes (from cube_detector) from lidar data in pangolin
 
 
-### Pangoclouds
+### Demo
 pangoclouds.py loads a point cloud, removes noise, clusters the datapoints and with a neural network identifies cubes from different geometries successfully with an accuracy of 97.6%
 
 ![pangloclouds](/images/pangoclouds.png "pangoclouds results")
